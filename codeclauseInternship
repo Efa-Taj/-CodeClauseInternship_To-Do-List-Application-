@@ -1,0 +1,83 @@
+import java.util.Arraylist;
+import java.util.Scanner;
+public class To Do List {
+    private static
+Arraylist<Strings>tasks = new Arraylist<>();
+    private static Scanner scanner = neew Scanner(System.in);
+    public static void main (String[]args) {
+        boolean exit = false;
+        while (!exit) {
+System.out.println("\n1.Add task");
+System.out.println("\n2.edit task");
+System.out.println("\n3.Remove task");
+System.out.println("\n4.View tasks");
+System.out.println("\n5.Exit");
+System.out.print("Enter your choice");
+        int choice=scanner.nextInt();
+        scanner.nextLine();//consume newline
+        switch(choice){
+          case 1:
+             addTask();
+             break;
+         case 2:
+            editTask();
+            break;
+         case 3:
+           removeTask();
+           break;
+        case 4:
+          ViewTask();
+          break;
+       case 5:
+         exit = true;
+        break;
+    default:
+System.out.println("Invalid choice.Please Try Again.");
+        }
+        }
+    }
+   private static void addTask()
+{
+     System.out.print("Enter task to add:");
+          String task=scanner.nextline();
+          tasks.add(task);
+    System.out.println("Task added succesfully.");
+}
+     private static void editTask()
+{
+   System.out.print("Enter index of task to edit:");
+         int index = scanner.nextline();
+         scanner.nextline();  //consume newline
+         if (index >= 0 && index < tasks.size())  {
+  System.out.print("Enter new task:");
+         String newTask = scanner.nextline();
+          tasks.sets(index,newTask);
+System.out.println{"Task edited successfully.");
+                  } else {
+System.out.println("Invalid index.");
+}
+         }
+      private static void removeTask() {
+          System.out.print(" Enter index of task to remove: ");
+              int index = scanner.nextline();
+      Scanner.nextline();//consume newline
+              if (index >=0 && index < tasks.size()) {
+                tasks.remove(index);
+System.out.println("Task removed successfully.");
+              }else {
+System.out.println("Invalid index.");
+              }
+         }
+             private static void viewtasks() {
+               if (tasks.isEmpty()) {
+System.out.println("No tasks available.") ;
+                  } else {
+               
+System.out.println("Tasks:");
+                   for (int i=0; i <tasks.size(); i++) {
+System.out.println(i + "." + tasks.get(i));
+                   }
+               }
+             }
+}
+
